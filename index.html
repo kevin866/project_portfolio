@@ -124,22 +124,36 @@
                 <img src="img/cascadedpid.png" alt="Collaborative Mobile Robot" class="ori">
             </div> -->
             <p>
-                This project explores human-robot collaboration through a mobile robotic platform equipped with an OpenManipulator-P 
-                arm and ROS-based control architecture. The robot, built on a mobile base (“Frank”), is designed to assist in joint 
-                physical tasks with humans, such as moving tables or navigating tight spaces. I improved system reliability through 
-                hardware rewiring and added emergency stop mechanisms. By tuning a cascaded PID controller with feedforward, I achieved 
-                compliant arm behavior that enables the mobile base to be maneuvered intuitively through physical interaction with the 
-                arm. An admittance controller is currently under development to enable more intelligent force-based responses. 
-                This project demonstrates how low-level control can support natural human-robot collaboration.
+                This project investigates human–robot co-manipulation using a mobile manipulator platform 
+                (“Frank”) composed of a mobile base and an OpenManipulator-P arm, integrated through a 
+                custom ROS 2 control architecture. The system is designed to physically collaborate with 
+                a human during shared tasks such as moving furniture or navigating tight spaces.
+
+                I improved system robustness through hardware rewiring, safety integration, and emergency-stop 
+                mechanisms, and developed multiple whole-body control frameworks that coordinate the motion of 
+                the base and arm. A resolved-rate whole-body controller with null-space projection enables 
+                simultaneous task execution, allowing the end effector to remain compliant while secondary 
+                objectives such as posture regulation are handled in the null space.
+
+                In parallel, I implemented a QP-based whole-body controller that formulates base and arm 
+                motion as a constrained optimization problem, enabling systematic handling of task priorities 
+                and physical limits, with obstacle avoidance currently under development.
+
+                At the low level, I developed torque control, joint-space impedance control, and an admittance 
+                controller to achieve compliant, force-responsive behavior, allowing a human to intuitively guide 
+                the robot through physical interaction. Overall, this project demonstrates how layered control—from 
+                torque-level compliance to optimization-based whole-body coordination—supports safe and intuitive 
+                human–robot collaboration.            
             </p>
-            <figure class="image-container">
+            <!-- <figure class="image-container">
                 <img src="img/cascadedpid.png" alt="Collaborative Mobile Robot" class="ori">
                 <figcaption class="image-caption">Cascaded PID Control Architecture</figcaption>
-            </figure>
+            </figure> -->
             <p class="centered-link links-spaced">
                 <a href="https://youtube.com/shorts/bZ019xYsN28?si=jBkl1PfUX8O3O2OO" target="_blank">Arm to Base</a>
                 <a href="https://www.youtube.com/shorts/JvA2TC4y7XA" target="_blank">Impedance Control</a>
-                <a href="https://youtu.be/3_WhCK4FwMM" target="_blank">Alpha Blend coordinator for Goto task</a>
+                <a href="https://youtu.be/6yblr0gLYHw" target="_blank">whole body control with null space for posture hold</a>
+                
             </p>
 
             <style>
