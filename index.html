@@ -1,284 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin Wang's Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 1rem;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #555f56;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            margin-top: 1rem;
-        }
-        nav a {
-            margin: 1rem;
-            text-decoration: none;
-            color: #1e211e;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            padding: 1rem;
-            color: #0f120f;
-        }
-        .project {
-            margin-bottom: 2rem;
-        }
-        .project-title {
-            padding: 1rem;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .project img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 0.5rem;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            /* padding: 0.3rem; */
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        .image-container {
-            text-align: center; 
-        }
-        img.ori {
-            width: 80%; 
-            height: auto; 
-            padding: 1rem;
-        }
-        img {
-            width: 50%; 
-            height: auto; 
-            padding: 1rem;
-        }
-        .centered-link {
-            text-align: center; /* Centers the content horizontally */
-        }
-        p {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-            line-height: 1.5;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kevin Wang | Robotics Portfolio</title>
+  <style>
+    :root {
+      --bg: #f4f4f9;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --header: #4f5b52;
+      --accent: #2f855a;
+      --border: #d9e2ec;
+      --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    header {
+      background-color: var(--header);
+      color: white;
+      text-align: center;
+      padding: 3rem 1.25rem 2.5rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 0.35rem auto;
+      max-width: 760px;
+      color: #eef2ee;
+      padding: 0;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      text-align: center;
+      padding: 0.9rem 1rem;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0.35rem 0.9rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 2rem auto;
+      padding: 1.75rem;
+      background: var(--surface);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      color: #16202a;
+    }
+
+    .project {
+      padding-top: 0.5rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .project-title {
+      margin-bottom: 0.75rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #12202b;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .image-container img,
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    img.ori {
+      width: 82%;
+    }
+
+    p {
+      margin: 0.7rem 0;
+      padding: 0;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 0.35rem 0.45rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .links a:hover {
+      color: white;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        margin: 1rem;
+        padding: 1.25rem;
+      }
+
+      .project-title {
+        font-size: 1.15rem;
+      }
+
+      nav a {
+        margin: 0.25rem 0.5rem;
+      }
+
+      img.ori {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Kevin Wang's Portfolio</h1>
-        <p>Showcasing my projects and skills in robotics, mechanical engineering, and more.</p>
-    </header>
+  <header>
+    <h1>Kevin Wang</h1>
+    <p class="tagline">
+      Robotics Engineer focused on whole-body control, mobile manipulation,
+      robot learning-ready systems, and real-world deployment
+    </p>
+    <p>
+      I build robotic systems that combine hardware integration, control,
+      perception, and autonomy for real-world operation.
+    </p>
+  </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <div class="container" id="about">
-        <h2>About Me</h2>
-        <p>
-            Hi! I’m Kevin Wang, a mechanical engineering graduate currently pursuing a master’s in robotics at Santa 
-            Clara University. I specialize in robotics and control systems, with hands-on experience building full 
-            robotic platforms—from hardware integration and motion control to real-time software and system identification. 
-            I enjoy developing reliable, high-performance controllers, experimenting with advanced algorithms, and 
-            solving real-world automation challenges where mechanical design, sensing, and intelligent control come together.
-        </p>
+  <section class="container" id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, I’m Kevin Wang, a robotics engineer with a background in mechanical engineering and a master’s
+      in Robotics and Automation from Santa Clara University.
+      My work focuses on building real-world robotic systems that combine control, software, and hardware
+      integration. I have hands-on experience developing mobile manipulators using ROS 2, whole-body control,
+      and real-time system coordination.
+
+    </p>
+    <p>
+      I’m particularly interested in control systems, robot autonomy, and learning-based robotics, and I enjoy 
+      working on problems where software, sensing, and physical systems come together in real environments.
+
+    </p>
+  </section>
+
+  <section class="container" id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <div class="project-title">Collaborative Mobile Robot</div>
+      <p>
+        This project investigates human–robot co-manipulation using a mobile
+        manipulator platform (“Frank”) composed of a mobile base and an
+        OpenManipulator-P arm integrated through a custom ROS 2 control
+        architecture. The system is designed for shared physical tasks such as
+        moving furniture, coordinated transport, and safe interaction in
+        human-centered environments.
+      </p>
+      <p>
+        I improved system robustness through hardware rewiring, safety
+        integration, and emergency-stop mechanisms, and developed multiple
+        whole-body control frameworks that coordinate base and arm motion. A
+        resolved-rate whole-body controller with null-space projection enables
+        simultaneous task execution while secondary objectives such as posture
+        regulation are handled in the null space.
+      </p>
+      <p>
+        In parallel, I implemented a QP-based whole-body controller that
+        formulates base and arm motion as a constrained optimization problem,
+        enabling systematic handling of task priorities and physical limits,
+        with obstacle avoidance under development. At the low level, I developed
+        torque control, joint-space impedance control, and an admittance
+        controller for compliant and force-responsive behavior.
+      </p>
+      <p>
+        This platform also serves as a learning-ready robotics system by
+        supporting structured controller testing, hardware data collection, and
+        future integration with policy learning, perception modules, and
+        simulation-based training workflows.
+      </p>
+
+      <div class="links">
+        <a href="https://youtube.com/shorts/bZ019xYsN28?si=jBkl1PfUX8O3O2OO" target="_blank" rel="noopener noreferrer">Arm to Base Demo</a>
+        <a href="https://youtu.be/eS5MawKX8QY" target="_blank" rel="noopener noreferrer">Impedance Control</a>
+        <a href="https://youtu.be/ChRnr9zuSS8" target="_blank" rel="noopener noreferrer">Null-Space Whole-Body Control</a>
+        <a href="https://www.youtube.com/watch?v=dz8DDqjNEAs" target="_blank" rel="noopener noreferrer">Obstacle Avoidance + Tracking</a>
+        <a href="https://github.com/kevin866/Frank_ros2" target="_blank" rel="noopener noreferrer">Frank ROS2 Repository</a>
+      </div>
     </div>
 
-    <div class="container" id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <div class="project-title" style="font-size: 18px;">Collaborative Mobile Robot</div>
-            <!-- <div class="image-container">
-                <img src="img/cascadedpid.png" alt="Collaborative Mobile Robot" class="ori">
-            </div> -->
-            <p>
-                This project investigates human–robot co-manipulation using a mobile manipulator platform 
-                (“Frank”) composed of a mobile base and an OpenManipulator-P arm, integrated through a 
-                custom ROS 2 control architecture. The system is designed to physically collaborate with 
-                a human during shared tasks such as moving furniture or navigating tight spaces.
-
-                I improved system robustness through hardware rewiring, safety integration, and emergency-stop 
-                mechanisms, and developed multiple whole-body control frameworks that coordinate the motion of 
-                the base and arm. A resolved-rate whole-body controller with null-space projection enables 
-                simultaneous task execution, allowing the end effector to remain compliant while secondary 
-                objectives such as posture regulation are handled in the null space.
-
-                In parallel, I implemented a QP-based whole-body controller that formulates base and arm 
-                motion as a constrained optimization problem, enabling systematic handling of task priorities 
-                and physical limits, with obstacle avoidance currently under development.
-
-                At the low level, I developed torque control, joint-space impedance control, and an admittance 
-                controller to achieve compliant, force-responsive behavior, allowing a human to intuitively guide 
-                the robot through physical interaction. Overall, this project demonstrates how layered control—from 
-                torque-level compliance to optimization-based whole-body coordination—supports safe and intuitive 
-                human–robot collaboration.            
-            </p>
-            <!-- <figure class="image-container">
-                <img src="img/cascadedpid.png" alt="Collaborative Mobile Robot" class="ori">
-                <figcaption class="image-caption">Cascaded PID Control Architecture</figcaption>
-            </figure> -->
-            <p class="centered-link links-spaced">
-                <a href="https://youtube.com/shorts/bZ019xYsN28?si=jBkl1PfUX8O3O2OO" target="_blank">Arm to Base</a>
-                <a href="https://youtu.be/eS5MawKX8QY" target="_blank">Impedance Control</a>
-                <a href="https://youtu.be/ChRnr9zuSS8" target="_blank">whole body control with null space for posture hold</a>
-                <a href="https://www.youtube.com/watch?v=dz8DDqjNEAs" target="_blank">obstacle avoidance and end effector tracking</a>
-                <a href="https://github.com/kevin866/Frank_ros2" target="_blank">github repository for Frank</a>
-
-            </p>
-
-            <style>
-                .links-spaced a {
-                    margin: 0 12px;   /* adjust the spacing */
-                }
-            </style>
-        </div>
-
-
-        <div class="project">
-            <div class="project-title" style="font-size: 18px;">Waypoint Profiler Capstone Design Project</div>
-            <div class="image-container">
-                <img src="img/waypoint.jpeg" alt="Waypoint Profiler" class="ori">
-            </div>
-            <p>
-                For my senior design project, I collaborated with another mechanical engineering student and two computer 
-                engineering students to develop an underwater robot. Through stakeholder interviews and trade-off analyses, 
-                we prioritized reliability and functionality in the design. We applied DFM principles and FEA simulations to 
-                ensure the robot's ease of manufacture and structural reliability. Adhering to strict safety protocols, we safely 
-                integrated high-capacity electronics, including thrusters and Lithium-ion batteries. We also implemented an assembly 
-                and pre-deployment review process to ensure safe and successful operations. Throughout the project, we maintained 
-                effective communication and co-authored a comprehensive 90+ page report. Our efforts earned us the Best in 
-                Interdisciplinary Session award at the Senior Design Presentations.
-            </p>
-            <p class="centered-link">
-                <a href="https://www.linkedin.com/posts/scu-robotic-systems-lab_waypoint-profiler-capstone-project-wins-interdisciplinary-ugcPost-7199922914370936834-oJEq?utm_source=combined_share_message&utm_medium=member_desktop_web" target="_blank">Watch Video</a>
-            </p>
-        </div>
-
-        <div class="project">
-            <div class="project-title" style="font-size: 18px;">Robot Manipulator Program for Tool Sorting </div>
-            <div class="image-container">
-                <img src="img/robotarm.png" alt="Sorting Robot Arm">
-            </div>
-            
-            <p>
-                I designed a tool-sorting system to improve workbench organization for engineers and technicians in a simulated 
-                environment. The project involved programming a robotic arm to sort tools into designated bins. I also developed 
-                a user-friendly interface and implemented a voice control system for intuitive, hands-free operation. This solution 
-                enhanced workspace efficiency and minimized manual effort through seamless user interaction and automated sorting.            
-            </p>
-            <p class="centered-link">
-                <a href="https://www.youtube.com/watch?v=NkmQcJ-MXqo" target="_blank">Watch Video</a>
-            </p>
-            
-        </div>
-
-        <div class="project">
-            <div class="project-title" style="font-size: 18px;">Angular position control with fan motor</div>
-            <div class="image-container">
-                <img src="img/LazySusan.png" alt="Observer-Based Compensator Design" class="ori">
-            </div>
-            <p>
-                In this mechatronics project, I implemented PID control to regulate the angular position of the Lazy Susan by adjusting 
-                the motor output effort of the fan motor. I used a variable resistor to measure the system's angle.
-            </p>
-            <p class="centered-link">
-                <a href="https://www.youtube.com/watch?v=8f9eDmYIgb8" target="_blank">Watch Video</a>
-            </p>
-        </div>
-
-
-        <div class="project">
-            <div class="project-title" style="font-size: 18px;">Marble Maze Arcade Machine</div>
-            <div class="image-container">
-                <img src="img/marble_maze.png" alt="Observer-Based Compensator Design">
-            </div>
-            <p>
-                In this mechatronics project, I 3D printed the main structure of the machine, including the ball 
-                support joint and the maze. The user can use the joystick to control the orientation of the maze in 
-                order to roll the marble ball from the starting point to the endpoint. I implemented a timing function 
-                and monitor to enhance the player experience.
-            </p>
-            <p class="centered-link">
-                <a href="https://www.youtube.com/watch?v=3QMhRR-0L9s" target="_blank">Watch Video</a>
-            </p>
-        </div>
-
-
-        <div class="project">
-            <div class="project-title" style="font-size: 18px;">Action Sequence Generation</div>
-            <!-- <div class="image-container">
-                <img src="img/marble_maze.png" alt="Observer-Based Compensator Design">
-            </div> -->
-            <p>
-                This project focuses on generating action sequences from coffee-making videos using machine learning. 
-                It includes tools for training an object detection model to recognize key objects and movements, such 
-                as pressing the start button or handling coffee grounds. Users can fine-tune the model to their specific 
-                setup with as few as 20-30 labeled images. The repository provides scripts for data preparation, labeling, 
-                and model fine-tuning using YOLO. Once trained, the model tracks object positions, grasping points, and 
-                movement events, displaying the detected actions alongside the video. Customization options allow 
-                adaptation to different resolutions and video speeds.
-            </p>
-            <p class="centered-link">
-                <a href="https://youtu.be/1aa6HgYx5Go" target="_blank">Watch Video</a>
-            </p>
-        </div>
-        <div class="project">
-            <div class="project-title" style="font-size: 18px;">Acrylic Light Stand Design and Manufacturing</div>
-            <div class="image-container">
-                <img src="img/acryliclightstand.jpg" alt="Acrylic Light Stand">
-            </div>
-            <p>
-                I designed an acrylic light stand for Bronco Venture Accelerator Cohort 6, engaging in a comprehensive 
-                ideation process to explore multiple design concepts. Leveraging rapid prototyping techniques, including 
-                laser cutting, I developed and finalized a design that met customer expectations. Through trial and error, 
-                I established a standardized manufacturing process, optimizing material selection, laser cutter settings, 
-                and creating a manufacturing fixture to ensure consistency and quality across all units. The project culminated 
-                in the successful delivery of 20 high-quality units, generating $400 in revenue with a $300 profit margin. 
-            </p>
-        </div>
+    <div class="project">
+      <div class="project-title">Waypoint Profiler Capstone Design Project</div>
+      <div class="image-container">
+        <img src="img/waypoint.jpeg" alt="Waypoint Profiler" class="ori" />
+      </div>
+      <p>
+        For my senior design project, I collaborated with a multidisciplinary
+        team to develop an underwater robot for waypoint-based water sampling.
+        Through stakeholder interviews and trade-off analyses, we prioritized
+        reliability, functionality, and safe operation in real deployment
+        conditions.
+      </p>
+      <p>
+        We applied DFM principles and FEA simulations to improve manufacturability
+        and structural reliability, integrated high-capacity electronics under
+        strict safety constraints, and established assembly and pre-deployment
+        review procedures. The project resulted in a 90+ page engineering report
+        and earned Best in Interdisciplinary Session at the Senior Design
+        Presentations.
+      </p>
+      <div class="links">
+        <a href="https://www.linkedin.com/posts/scu-robotic-systems-lab_waypoint-profiler-capstone-project-wins-interdisciplinary-ugcPost-7199922914370936834-oJEq?utm_source=combined_share_message&utm_medium=member_desktop_web" target="_blank" rel="noopener noreferrer">Watch Video</a>
+      </div>
     </div>
 
-    <div class="container" id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="kwang4@scu.edu">kwang4@scu.edu</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/kwang04/">https://www.linkedin.com/in/kwang04/</a></p>
-        <p>GitHub: <a href="https://github.com/kevin866">https://github.com/kevin866</a></p>
+    <div class="project">
+      <div class="project-title">Robot Manipulator Program for Tool Sorting</div>
+      <div class="image-container">
+        <img src="img/robotarm.png" alt="Sorting Robot Arm" />
+      </div>
+      <p>
+        I developed a robotic arm system in simulation to automate tool sorting
+        and improve workbench organization. The project involved motion planning,
+        task sequencing, and automated placement of tools into designated bins.
+      </p>
+      <p>
+        I also developed a user-facing interface and added voice control for
+        intuitive hands-free interaction, demonstrating a combination of robot
+        programming, human–robot interaction, and practical automation workflow
+        design.
+      </p>
+      <div class="links">
+        <a href="https://www.youtube.com/watch?v=NkmQcJ-MXqo" target="_blank" rel="noopener noreferrer">Watch Video</a>
+      </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Kevin Wang. Built with passion and dedication.</p>
-    </footer>
+    <div class="project">
+      <div class="project-title">Angular Position Control with Fan Motor</div>
+      <div class="image-container">
+        <img src="img/LazySusan.png" alt="Angular Position Control System" class="ori" />
+      </div>
+      <p>
+        In this mechatronics project, I implemented PID control to regulate the
+        angular position of a Lazy Susan mechanism by controlling the output
+        effort of a fan motor. A variable resistor was used to measure angular
+        position and close the feedback loop.
+      </p>
+      <p>
+        This project strengthened my hands-on experience with feedback control,
+        actuator behavior, sensor integration, and real-world tuning of dynamic
+        systems.
+      </p>
+      <div class="links">
+        <a href="https://www.youtube.com/watch?v=8f9eDmYIgb8" target="_blank" rel="noopener noreferrer">Watch Video</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Marble Maze Arcade Machine</div>
+      <div class="image-container">
+        <img src="img/marble_maze.png" alt="Marble Maze Arcade Machine" />
+      </div>
+      <p>
+        In this mechatronics project, I designed and fabricated a marble maze
+        arcade machine using 3D-printed components, including the ball support
+        joint and maze structure. The user controls the maze orientation through
+        a joystick to guide the marble from start to finish.
+      </p>
+      <p>
+        I also implemented a timing function and display system to improve user
+        interaction and overall gameplay experience, combining mechanical design,
+        control, and embedded system implementation.
+      </p>
+      <div class="links">
+        <a href="https://www.youtube.com/watch?v=3QMhRR-0L9s" target="_blank" rel="noopener noreferrer">Watch Video</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Action Sequence Generation</div>
+      <p>
+        This project focuses on generating action sequences from coffee-making
+        videos using machine learning. It includes tools for training an object
+        detection model to recognize key objects and events such as pressing a
+        start button or handling coffee grounds.
+      </p>
+      <p>
+        Users can fine-tune the model to their setup with a relatively small
+        labeled dataset. The repository includes scripts for data preparation,
+        labeling, YOLO-based fine-tuning, and event extraction. Once trained,
+        the model tracks object positions, grasp points, and task-relevant
+        motions while displaying detected actions alongside the video.
+      </p>
+      <div class="links">
+        <a href="https://youtu.be/1aa6HgYx5Go" target="_blank" rel="noopener noreferrer">Watch Video</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Acrylic Light Stand Design and Manufacturing</div>
+      <div class="image-container">
+        <img src="img/acryliclightstand.jpg" alt="Acrylic Light Stand" />
+      </div>
+      <p>
+        I designed an acrylic light stand for Bronco Venture Accelerator Cohort
+        6, exploring multiple concepts through an iterative prototyping process.
+        Using laser cutting and rapid prototyping, I developed a final design
+        that met customer expectations and manufacturing constraints.
+      </p>
+      <p>
+        Through repeated testing, I standardized the manufacturing process,
+        optimized material selection and cutter settings, and created a fixture
+        to improve repeatability. The project led to the successful delivery of
+        20 units and generated $400 in revenue with a $300 profit margin.
+      </p>
+    </div>
+  </section>
+
+  <section class="container" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <p>Email: <a href="mailto:kwang4@scu.edu">kwang4@scu.edu</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/kwang04/" target="_blank" rel="noopener noreferrer">linkedin.com/in/kwang04</a></p>
+      <p>GitHub: <a href="https://github.com/kevin866" target="_blank" rel="noopener noreferrer">github.com/kevin866</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Kevin Wang. Built with passion and dedication.</p>
+  </footer>
 </body>
 </html>
