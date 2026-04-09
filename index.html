@@ -198,6 +198,35 @@
         width: 100%;
       }
     }
+
+    .gif-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .gif-item {
+      text-align: center;
+    }
+
+    .gif-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .gif-item p {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .gif-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -271,6 +300,10 @@
         future integration with policy learning, perception modules, and
         simulation-based training workflows.
       </p>
+      
+      <div class="image-container">
+        <img src="img/frank.png" alt="Collaborative Mobile Robot" class="ori" />
+      </div>
 
       <div class="links">
         <a href="https://youtube.com/shorts/bZ019xYsN28?si=jBkl1PfUX8O3O2OO" target="_blank" rel="noopener noreferrer">Arm to Base Demo</a>
@@ -281,6 +314,56 @@
         <a href="https://github.com/kevin866/Frank_ros2" target="_blank" rel="noopener noreferrer">Frank ROS2 Repository</a>
       </div>
     </div>
+
+  <div class="project">
+    <div class="project-title">Motion Planning Algorithms</div>
+    <p>
+      I implemented A*, D* Lite, RRT*, and RRT* with tree reuse to compare
+      different motion planning approaches in environments with both static
+      and moving obstacles. The system uses a simulated lidar belief map to
+      represent what the robot can see.
+    </p>
+    <p>
+      A* finds the shortest path when the environment is fully known. D* Lite
+      efficiently replans when new obstacles appear. RRT* uses random sampling
+      to explore the space and find paths, which works well in higher dimensions.
+      The tree reuse version speeds up repeated queries by keeping and updating
+      the search tree instead of rebuilding from scratch.
+    </p>
+    <p>
+      This project gave me hands-on experience with different planning algorithms
+      and helped me understand the trade-offs between speed, optimality, and how
+      well each approach handles dynamic environments.
+    </p>
+    
+    <div class="gif-grid">
+      <div class="gif-item">
+        <img src="img/dynamic_multi_crossing__astar__trial_5.gif" alt="A* Algorithm" />
+        <p>A* Pathfinding</p>
+      </div>
+      
+      <div class="gif-item">
+        <img src="img/dynamic_multi_crossing__dstar_lite__trial_5.gif" alt="D* Lite Algorithm" />
+        <p>D* Lite Replanning</p>
+      </div>
+      
+      <div class="gif-item">
+        <img src="img/dynamic_multi_crossing__rrt_star__trial_0.gif" alt="RRT* Algorithm" />
+        <p>RRT* Planning</p>
+      </div>
+      
+      <div class="gif-item">
+        <img src="img/dynamic_multi_crossing__rrt_star_reuse__trial_5.gif" alt="RRT* Tree Reuse" />
+        <p>RRT* with Tree Reuse</p>
+      </div>
+    </div>
+    
+    <!-- Optional: Add links to videos or repository -->
+    <div class="links">
+      <a href="https://github.com/kevin866/motion_planning.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+    </div>
+  </div>
+
 
     <div class="project">
       <div class="project-title">Waypoint Profiler Capstone Design Project</div>
