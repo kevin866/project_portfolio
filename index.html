@@ -268,52 +268,87 @@
   <section class="container" id="projects">
     <h2>Projects</h2>
 
-    <div class="project">
-      <div class="project-title">Collaborative Mobile Robot</div>
-      <p>
-        This project investigates human–robot co-manipulation using a mobile
-        manipulator platform (“Frank”) composed of a mobile base and an
-        OpenManipulator-P arm integrated through a custom ROS 2 control
-        architecture. The system is designed for shared physical tasks such as
-        moving furniture, coordinated transport, and safe interaction in
-        human-centered environments.
-      </p>
-      <p>
-        I improved system robustness through hardware rewiring, safety
-        integration, and emergency-stop mechanisms, and developed multiple
-        whole-body control frameworks that coordinate base and arm motion. A
-        resolved-rate whole-body controller with null-space projection enables
-        simultaneous task execution while secondary objectives such as posture
-        regulation are handled in the null space.
-      </p>
-      <p>
-        In parallel, I implemented a QP-based whole-body controller that
-        formulates base and arm motion as a constrained optimization problem,
-        enabling systematic handling of task priorities and physical limits,
-        with obstacle avoidance under development. At the low level, I developed
-        torque control, joint-space impedance control, and an admittance
-        controller for compliant and force-responsive behavior.
-      </p>
-      <p>
-        This platform also serves as a learning-ready robotics system by
-        supporting structured controller testing, hardware data collection, and
-        future integration with policy learning, perception modules, and
-        simulation-based training workflows.
-      </p>
-      
-      <div class="image-container">
-        <img src="img/frank.png" alt="Collaborative Mobile Robot" class="ori" />
-      </div>
+  <div class="project">
+    <div class="project-title">Collaborative Mobile Robot</div>
+    <p>
+      This project investigates human–robot co-manipulation using a mobile
+      manipulator platform (“Frank”) composed of a mobile base and an
+      OpenManipulator-P arm integrated through a custom ROS 2 control
+      architecture. The system is designed for shared physical tasks such as
+      moving furniture, coordinated transport, and safe interaction in
+      human-centered environments.
+    </p>
+    <p>
+      I improved system robustness through hardware rewiring, safety
+      integration, and emergency-stop mechanisms, and developed multiple
+      whole-body control frameworks that coordinate base and arm motion. A
+      resolved-rate whole-body controller with null-space projection enables
+      simultaneous task execution while secondary objectives such as posture
+      regulation are handled in the null space.
+    </p>
+    <p>
+      In parallel, I implemented a QP-based whole-body controller that
+      formulates base and arm motion as a constrained optimization problem,
+      enabling systematic handling of task priorities and physical limits,
+      with obstacle avoidance under development. At the low level, I developed
+      torque control, joint-space impedance control, and an admittance
+      controller for compliant and force-responsive behavior.
+    </p>
+    <p>
+      This platform also serves as a learning-ready robotics system by
+      supporting structured controller testing, hardware data collection, and
+      future integration with policy learning, perception modules, and
+      simulation-based training workflows.
+    </p>
+    
+    <div class="image-container">
+      <img src="img/frank.png" alt="Collaborative Mobile Robot" class="ori" />
+    </div>
 
-      <div class="links">
-        <a href="https://youtube.com/shorts/bZ019xYsN28?si=jBkl1PfUX8O3O2OO" target="_blank" rel="noopener noreferrer">Arm to Base Demo</a>
-        <a href="https://youtu.be/eS5MawKX8QY" target="_blank" rel="noopener noreferrer">Impedance Control</a>
-        <a href="https://youtu.be/ChRnr9zuSS8" target="_blank" rel="noopener noreferrer">Null-Space Whole-Body Control</a>
-        <a href="https://www.youtube.com/watch?v=dz8DDqjNEAs" target="_blank" rel="noopener noreferrer">Obstacle Avoidance + Tracking</a>
-        <a href="https://www.youtube.com/watch?v=T3ctBV8Fl7I" target="_blank" rel="noopener noreferrer">Coordinated motion with velocity control</a>
-        <a href="https://github.com/kevin866/Frank_ros2" target="_blank" rel="noopener noreferrer">Frank ROS2 Repository</a>
+    <div class="links">
+      <a href="https://youtube.com/shorts/bZ019xYsN28?si=jBkl1PfUX8O3O2OO" target="_blank" rel="noopener noreferrer">Arm to Base Demo</a>
+      <a href="https://youtu.be/eS5MawKX8QY" target="_blank" rel="noopener noreferrer">Impedance Control</a>
+      <a href="https://youtu.be/ChRnr9zuSS8" target="_blank" rel="noopener noreferrer">Null-Space Whole-Body Control</a>
+      <a href="https://www.youtube.com/watch?v=dz8DDqjNEAs" target="_blank" rel="noopener noreferrer">Obstacle Avoidance + Tracking</a>
+      <a href="https://www.youtube.com/watch?v=T3ctBV8Fl7I" target="_blank" rel="noopener noreferrer">Coordinated motion with velocity control</a>
+      <a href="https://github.com/kevin866/Frank_ros2" target="_blank" rel="noopener noreferrer">Frank ROS2 Repository</a>
+    </div>
+  </div>
+
+
+  <div class="project">
+    <div class="project-title">Arduino Sensor Modules Collection</div>
+    <p>
+      This collection contains Arduino implementations for a variety of sensor modules
+      used in an embedded systems course. Ranging was implemented across three technologies:
+      an ultrasonic sensor using time-of-flight sound waves, a short-range analog infrared
+      sensor (GP2Y0A41SK0F), and a TFMini Plus micro LiDAR for higher accuracy over longer
+      distances. For line following, an 8-channel SparkFun Line Follower Array was configured
+      alongside an industrial-grade sensor for robust tracking. Environmental monitoring used
+      an Adafruit BME688 for air quality, gas, temperature, humidity, and pressure data, paired
+      with a roller microswitch for collision detection. The collection also includes a SparkFun
+      XA1110 GPS breakout for location data and an Adafruit 9-DOF IMU (BNO085) for onboard
+      sensor fusion providing yaw, pitch, and roll. Camera and LiDAR modules are in progress.
+    </p>
+    <div class="gif-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="gif-item">
+        <img src="img/dis.png" alt="Distance Sensor Module" />
+        <p>Distance Sensors</p>
+      </div>
+      <div class="gif-item">
+        <img src="img/line.png" alt="Line Sensor Module" />
+        <p>Line Sensor</p>
+      </div>
+      <div class="gif-item">
+        <img src="img/env.png" alt="Environment Sensor Module" />
+        <p>Environment Sensor</p>
       </div>
     </div>
+    <div class="links">
+      <a href="https://github.com/kevin866/Sensor_Modules" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+    </div>
+  </div>
+
 
   <div class="project">
     <div class="project-title">Motion Planning Algorithms</div>
@@ -389,6 +424,8 @@
         <a href="https://www.linkedin.com/posts/scu-robotic-systems-lab_waypoint-profiler-capstone-project-wins-interdisciplinary-ugcPost-7199922914370936834-oJEq?utm_source=combined_share_message&utm_medium=member_desktop_web" target="_blank" rel="noopener noreferrer">Watch Video</a>
       </div>
     </div>
+
+
 
     <div class="project">
       <div class="project-title">Robot Manipulator Program for Tool Sorting</div>
